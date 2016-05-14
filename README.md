@@ -1,7 +1,7 @@
-Docker ELK stack
-================
+ELK stack in docker
+===================
 
-Just use docker-compose to start the ELK stack :
+Just use `docker-compose` to start the ELK stack :
 ```bash
 cd /vagrant
 docker-compose up
