@@ -3,17 +3,17 @@ version: '2'
 services:
 
   elasticsearch:
-    image: elasticsearch:5.0
+    image: elasticsearch:5.0.0-alpha1
     ports:
       - "9200:9200"
       - "9300:9300"
 
   logstash:
     image: logstash:5.0
-    command: logstash -f /etc/logstash/conf.d/springboot.conf
+    command: logstash -f /etc/logstash/conf.d/nginx_with_cache.conf
     volumes:
       - ./logstash/config:/etc/logstash/conf.d
-      - ./tests_logs:/data/logs
+      - ./logs:/data/logs
     ports:
       - "5000:5000"
     depends_on:
