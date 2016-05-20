@@ -10,7 +10,7 @@ services:
 
   logstash:
     image: logstash:5.0
-    command: logstash -f /etc/logstash/conf.d/nginx_with_cache.conf
+    command: logstash -f /etc/logstash/conf.d/nginx_conf1.conf
     volumes:
       - ./logstash/config:/etc/logstash/conf.d
       - ./logs:/data/logs
