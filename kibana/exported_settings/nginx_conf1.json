@@ -1,22 +1,5 @@
 [
   {
-    "_id": "Visitor-informations",
-    "_type": "dashboard",
-    "_source": {
-      "title": "Visitor informations",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"id\":\"Browser-name\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":3,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"Browser-version\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":3,\"size_y\":4,\"col\":4,\"row\":1},{\"id\":\"OS-name\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":3,\"size_y\":4,\"col\":7,\"row\":1},{\"id\":\"Request-geo-position\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":11,\"size_y\":6,\"col\":1,\"row\":5},{\"id\":\"Request-path\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":4,\"col\":6,\"row\":15},{\"id\":\"Request-count-during-time\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":5,\"size_y\":4,\"col\":1,\"row\":15},{\"id\":\"Request-referrer\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":5,\"size_y\":4,\"col\":1,\"row\":11},{\"id\":\"Request-user-agent\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":6,\"size_y\":4,\"col\":6,\"row\":11},{\"id\":\"Is-admin-request-questionmark-\",\"type\":\"visualization\",\"panelIndex\":9,\"size_x\":3,\"size_y\":4,\"col\":10,\"row\":1}]",
-      "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
-      }
-    }
-  },
-  {
     "_id": "Global-view",
     "_type": "dashboard",
     "_source": {
@@ -30,6 +13,23 @@
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Visitor-informations",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Visitor informations",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"OS-name\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":3,\"size_y\":4,\"col\":7,\"row\":1},{\"id\":\"Request-geo-position\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":11,\"size_y\":6,\"col\":1,\"row\":5},{\"id\":\"Request-path\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":4,\"col\":6,\"row\":15},{\"id\":\"Request-count-during-time\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":5,\"size_y\":4,\"col\":1,\"row\":15},{\"id\":\"Request-referrer\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":5,\"size_y\":4,\"col\":1,\"row\":11},{\"id\":\"Request-user-agent\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":6,\"size_y\":4,\"col\":6,\"row\":11},{\"id\":\"Is-admin-request-questionmark-\",\"type\":\"visualization\",\"panelIndex\":9,\"size_x\":3,\"size_y\":4,\"col\":10,\"row\":1},{\"id\":\"Browser-with-versions\",\"type\":\"visualization\",\"panelIndex\":10,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
       }
     }
   },
@@ -319,6 +319,20 @@
     "_source": {
       "title": "Is admin request ?",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"admin_request\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Browser-with-versions",
+    "_type": "visualization",
+    "_source": {
+      "title": "Browser with versions",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"name.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"major.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
